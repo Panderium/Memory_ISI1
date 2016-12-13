@@ -127,6 +127,11 @@ namespace Memory
         {
 
         }
+
+        private void Memory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
   

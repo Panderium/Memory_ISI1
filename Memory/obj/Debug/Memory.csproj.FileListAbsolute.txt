@@ -11,3 +11,6 @@ c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\bin\Debug\
 C:\Users\alexa\Downloads\Memory\Memory\bin\Debug\Memory.exe.config
 C:\Users\alexa\Downloads\Memory\Memory\obj\Debug\Memory.exe
 C:\Users\alexa\Downloads\Memory\Memory\obj\Debug\Memory.pdb
+C:\Users\alexa\Desktop\Memory\Memory\bin\Debug\Memory.exe.config
+C:\Users\alexa\Desktop\Memory\Memory\obj\Debug\Memory.exe
+C:\Users\alexa\Desktop\Memory\Memory\obj\Debug\Memory.pdb
