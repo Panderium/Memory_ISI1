@@ -1,0 +1,13 @@
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\bin\Debug\Memory.exe.config
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\obj\Debug\Memory.csprojResolveAssemblyReference.cache
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\obj\Debug\Memory.Memory.resources
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\obj\Debug\Memory.Properties.Resources.resources
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\obj\Debug\Memory.csproj.GenerateResource.Cache
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\bin\Debug\Memory.exe
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\bin\Debug\Memory.pdb
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\obj\Debug\Memory.exe
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\obj\Debug\Memory.pdb
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\bin\Debug\dllLoto.dll
+C:\Users\alexa\Downloads\Memory\Memory\bin\Debug\Memory.exe.config
+C:\Users\alexa\Downloads\Memory\Memory\obj\Debug\Memory.exe
+C:\Users\alexa\Downloads\Memory\Memory\obj\Debug\Memory.pdb
