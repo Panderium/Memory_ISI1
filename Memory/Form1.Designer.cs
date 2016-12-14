@@ -41,7 +41,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Distribuer = new System.Windows.Forms.Button();
             this.il_Sabot = new System.Windows.Forms.ImageList(this.components);
-            this.btn_test = new System.Windows.Forms.Button();
+            this.play = new System.Windows.Forms.Button();
+            this.btn_retourner = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.Score = new System.Windows.Forms.Label();
+            this.Valeur_Score = new System.Windows.Forms.Label();
+            this.chrono = new System.Windows.Forms.Label();
+            this.text_chrono = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tlp_cartes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -51,93 +63,116 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
             // tlp_cartes
             // 
-            this.tlp_cartes.ColumnCount = 4;
-            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlp_cartes.Controls.Add(this.pictureBox8, 3, 1);
+            this.tlp_cartes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tlp_cartes.ColumnCount = 7;
+            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tlp_cartes.Controls.Add(this.pictureBox14, 0, 1);
+            this.tlp_cartes.Controls.Add(this.pictureBox13, 0, 1);
+            this.tlp_cartes.Controls.Add(this.pictureBox12, 0, 1);
+            this.tlp_cartes.Controls.Add(this.pictureBox11, 0, 1);
+            this.tlp_cartes.Controls.Add(this.pictureBox10, 0, 1);
+            this.tlp_cartes.Controls.Add(this.pictureBox9, 0, 1);
             this.tlp_cartes.Controls.Add(this.pictureBox2, 1, 0);
             this.tlp_cartes.Controls.Add(this.pictureBox3, 2, 0);
-            this.tlp_cartes.Controls.Add(this.pictureBox7, 2, 1);
-            this.tlp_cartes.Controls.Add(this.pictureBox6, 1, 1);
             this.tlp_cartes.Controls.Add(this.pictureBox5, 0, 1);
             this.tlp_cartes.Controls.Add(this.pictureBox4, 3, 0);
             this.tlp_cartes.Controls.Add(this.pictureBox1, 0, 0);
-            this.tlp_cartes.Location = new System.Drawing.Point(0, 0);
+            this.tlp_cartes.Controls.Add(this.pictureBox8, 4, 0);
+            this.tlp_cartes.Controls.Add(this.pictureBox7, 5, 0);
+            this.tlp_cartes.Controls.Add(this.pictureBox6, 6, 0);
+            this.tlp_cartes.Location = new System.Drawing.Point(12, 2);
             this.tlp_cartes.Name = "tlp_cartes";
             this.tlp_cartes.RowCount = 2;
             this.tlp_cartes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlp_cartes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_cartes.Size = new System.Drawing.Size(960, 384);
+            this.tlp_cartes.Size = new System.Drawing.Size(1394, 386);
             this.tlp_cartes.TabIndex = 0;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(723, 195);
+            this.pictureBox8.Location = new System.Drawing.Point(803, 3);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(150, 150);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(243, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(203, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(150, 150);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(483, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(403, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(150, 150);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(483, 195);
+            this.pictureBox7.Location = new System.Drawing.Point(1003, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(150, 150);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(243, 195);
+            this.pictureBox6.Location = new System.Drawing.Point(1203, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(150, 150);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(3, 195);
+            this.pictureBox5.Location = new System.Drawing.Point(1003, 196);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(150, 150);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(723, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(603, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(150, 150);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // pictureBox1
             // 
@@ -147,15 +182,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // btn_Distribuer
             // 
-            this.btn_Distribuer.Location = new System.Drawing.Point(884, 485);
+            this.btn_Distribuer.Location = new System.Drawing.Point(658, 439);
             this.btn_Distribuer.Name = "btn_Distribuer";
-            this.btn_Distribuer.Size = new System.Drawing.Size(75, 23);
+            this.btn_Distribuer.Size = new System.Drawing.Size(150, 69);
             this.btn_Distribuer.TabIndex = 1;
-            this.btn_Distribuer.Text = "Distribuer";
+            this.btn_Distribuer.Text = "DISTRIBUER";
             this.btn_Distribuer.UseVisualStyleBackColor = true;
             this.btn_Distribuer.Click += new System.EventHandler(this.btn_Distribuer_Click);
             // 
@@ -206,27 +241,150 @@
             this.il_Sabot.Images.SetKeyName(40, "Taureau.jpg");
             this.il_Sabot.Images.SetKeyName(41, "Vache.jpg");
             // 
-            // btn_test
+            // play
             // 
-            this.btn_test.Location = new System.Drawing.Point(1227, 321);
-            this.btn_test.Name = "btn_test";
-            this.btn_test.Size = new System.Drawing.Size(75, 23);
-            this.btn_test.TabIndex = 2;
-            this.btn_test.Text = "test_loto";
-            this.btn_test.UseVisualStyleBackColor = true;
-            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
+            this.play.Location = new System.Drawing.Point(368, 439);
+            this.play.Name = "play";
+            this.play.Size = new System.Drawing.Size(150, 69);
+            this.play.TabIndex = 3;
+            this.play.Text = "JOUER";
+            this.play.UseVisualStyleBackColor = true;
+            this.play.Click += new System.EventHandler(this.play_Click);
+            // 
+            // btn_retourner
+            // 
+            this.btn_retourner.Location = new System.Drawing.Point(103, 439);
+            this.btn_retourner.Name = "btn_retourner";
+            this.btn_retourner.Size = new System.Drawing.Size(150, 69);
+            this.btn_retourner.TabIndex = 4;
+            this.btn_retourner.Text = "RETOUNER LES CARTES";
+            this.btn_retourner.UseVisualStyleBackColor = true;
+            this.btn_retourner.Click += new System.EventHandler(this.btn_retourner_Click);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // Score
+            // 
+            this.Score.AutoSize = true;
+            this.Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Score.ForeColor = System.Drawing.Color.Red;
+            this.Score.Location = new System.Drawing.Point(1087, 439);
+            this.Score.Name = "Score";
+            this.Score.Size = new System.Drawing.Size(133, 31);
+            this.Score.TabIndex = 6;
+            this.Score.Text = "SCORE :";
+            // 
+            // Valeur_Score
+            // 
+            this.Valeur_Score.AutoSize = true;
+            this.Valeur_Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Valeur_Score.ForeColor = System.Drawing.Color.Red;
+            this.Valeur_Score.Location = new System.Drawing.Point(1335, 439);
+            this.Valeur_Score.Name = "Valeur_Score";
+            this.Valeur_Score.Size = new System.Drawing.Size(30, 31);
+            this.Valeur_Score.TabIndex = 7;
+            this.Valeur_Score.Text = "0";
+            // 
+            // chrono
+            // 
+            this.chrono.AutoSize = true;
+            this.chrono.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chrono.ForeColor = System.Drawing.Color.Blue;
+            this.chrono.Location = new System.Drawing.Point(1335, 514);
+            this.chrono.Name = "chrono";
+            this.chrono.Size = new System.Drawing.Size(46, 31);
+            this.chrono.TabIndex = 8;
+            this.chrono.Text = "10";
+            // 
+            // text_chrono
+            // 
+            this.text_chrono.AutoSize = true;
+            this.text_chrono.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_chrono.ForeColor = System.Drawing.Color.Blue;
+            this.text_chrono.Location = new System.Drawing.Point(1002, 514);
+            this.text_chrono.Name = "text_chrono";
+            this.text_chrono.Size = new System.Drawing.Size(218, 31);
+            this.text_chrono.TabIndex = 9;
+            this.text_chrono.Text = "Temps restant :";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(803, 196);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox9.TabIndex = 8;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pb_XX_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(1203, 196);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox10.TabIndex = 9;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pb_XX_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Location = new System.Drawing.Point(603, 196);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox11.TabIndex = 10;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pb_XX_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(3, 196);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox12.TabIndex = 11;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pb_XX_Click);
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Location = new System.Drawing.Point(203, 196);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox13.TabIndex = 12;
+            this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pb_XX_Click);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Location = new System.Drawing.Point(403, 196);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox14.TabIndex = 13;
+            this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pb_XX_Click);
             // 
             // Memory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1449, 548);
-            this.Controls.Add(this.btn_test);
+            this.ClientSize = new System.Drawing.Size(1430, 596);
+            this.Controls.Add(this.text_chrono);
+            this.Controls.Add(this.chrono);
+            this.Controls.Add(this.Valeur_Score);
+            this.Controls.Add(this.Score);
+            this.Controls.Add(this.btn_retourner);
+            this.Controls.Add(this.play);
             this.Controls.Add(this.btn_Distribuer);
             this.Controls.Add(this.tlp_cartes);
             this.Name = "Memory";
             this.Text = "Memory";
-            this.Load += new System.EventHandler(this.Memory_Load);
             this.tlp_cartes.ResumeLayout(false);
             this.tlp_cartes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -237,7 +395,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -254,7 +419,19 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Distribuer;
         private System.Windows.Forms.ImageList il_Sabot;
-        private System.Windows.Forms.Button btn_test;
+        private System.Windows.Forms.Button play;
+        private System.Windows.Forms.Button btn_retourner;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label Score;
+        private System.Windows.Forms.Label Valeur_Score;
+        private System.Windows.Forms.Label chrono;
+        private System.Windows.Forms.Label text_chrono;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }
 

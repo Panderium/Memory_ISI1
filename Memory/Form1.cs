@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 using dllLoto;
 
@@ -17,6 +19,14 @@ namespace Memory
     {
         int nbCartesDansSabot;
         int nbCartesSurTapis;
+        int nb_cartes=0;
+        int score = 0;
+        PictureBox Image_1;
+        PictureBox Image_2;
+        int time = 10;
+        int gagne = 0;
+        
+
 
         public Memory()
         {
@@ -26,7 +36,10 @@ namespace Memory
 
         private void Distribution_Aleatoire()
         {
-            int rand;
+
+            clean();
+
+            int i_carte,i_paire;
             Random g = new Random();
             // On utilise la LotoMachine pour générer une série aléatoire
             LotoMachine hasard = new LotoMachine(nbCartesDansSabot);
@@ -37,51 +50,89 @@ namespace Memory
             // aux indices des cartes dans le "sabot"
 
             // Affectation des images aux picturebox
-            PictureBox carte;
+            PictureBox carte,paire;
             int i_image;
-            for (int i_carte = 0; i_carte < nbCartesSurTapis/2; i_carte++)
+            for (int i = 0; i < nbCartesSurTapis/2; i++)
             {
+                i_carte = g.Next(0, nbCartesSurTapis);
                 carte = (PictureBox)tlp_cartes.Controls[i_carte];
-                i_image = tImagesCartes[i_carte + 1]; // i_carte + 1 à cause
-                                                      // des pbs d'indices
-                carte.Tag = i_image;
-                carte.Image = il_Sabot.Images[i_image];
-                rand = g.Next(1,8);
-                while ((PictureBox)tlp_cartes.Controls[rand].Tag.ToString())
+                i_paire = g.Next(0, nbCartesSurTapis);
+                paire = (PictureBox)tlp_cartes.Controls[i_paire];
+
+                while (carte.Tag != null || i_carte==i_paire)
                 {
-                    rand = g.Next(1, 8);
+                    i_carte = g.Next(0, nbCartesSurTapis);
+                    carte = (PictureBox)tlp_cartes.Controls[i_carte];
                 }
 
-                carte = (PictureBox)tlp_cartes.Controls[rand];
+                while (paire.Tag != null || i_carte == i_paire)
+                {
+                    i_paire = g.Next(0, nbCartesSurTapis);
+                    paire = (PictureBox)tlp_cartes.Controls[i_paire];
+                }
+
+                i_image = tImagesCartes[i+1]; // i_carte + 1 à cause                
+                                                      // des pbs d'indices
                 carte.Tag = i_image;
-                carte.Image = il_Sabot.Images[i_image];
+                paire.Tag = i_image;
+                carte.Image = il_Sabot.Images[0];
+                paire.Image = il_Sabot.Images[0];
+
+                //carte = (PictureBox)tlp_cartes.Controls[rand];
+                //carte.Tag = i_image;
 
             }
             
         }
 
-
-
-       /* private void Distribution_Sequentielle()
+        private void clean()
         {
             PictureBox carte;
             int i_carte = 1;
 
             foreach (Control ctrl in tlp_cartes.Controls)
             {
-                // Je sais que le contrôle est une PictureBox
-                // donc je "caste" l'objet (le Contrôle) en PictureBox...
                 carte = (PictureBox)ctrl;
-                // Ensuite je peux accéder à la propriété Image
-                // (je ne pourrais pas si je n'avais pas "casté" le contrôle)
-                carte.Image = il_Sabot.Images[i_carte];
+                carte.Tag = null;
                 i_carte++;
             }
-        }*/
+        }
+
+        private void retourner_cartes()
+        {
+            PictureBox carte;
+            int i_carte = 1;
+
+            foreach (Control ctrl in tlp_cartes.Controls)
+            {
+                carte = (PictureBox)ctrl;
+                if (carte.Tag.ToString()!="trouve")
+                carte.Image = il_Sabot.Images[0];
+                i_carte++;
+            }
+        }
+
+        private void afficher_cartes()
+        {
+            PictureBox carte;
+            int i_carte = 1;
+
+            foreach (Control ctrl in tlp_cartes.Controls)
+            {   
+              
+                carte = (PictureBox)ctrl;
+                if (carte.Tag.ToString() != "trouve")
+                {
+                    carte.Image = il_Sabot.Images[Convert.ToInt32(carte.Tag)];
+                }
+                i_carte++;
+            }
+        }
 
         private void btn_Distribuer_Click(object sender, EventArgs e)
         {
-            
+            score = 0;
+            this.Valeur_Score.Text = score.ToString();
             // On récupère le nombre d'images dans le réservoir :
             nbCartesDansSabot = il_Sabot.Images.Count - 1;
             // On enlève 1 car :
@@ -100,37 +151,114 @@ namespace Memory
 
         private void btn_test_Click(object sender, EventArgs e)
         {
-            // On utilise la LotoMachine pour générer une série aléatoire
-            // On fixe à 49 le nombre maxi que retourne la machine
-            LotoMachine hasard = new LotoMachine(49);
-            // On veut une série de 6 numéros distincts parmi 49 (comme quand on joue au loto)
-            int[] tirageLoto = hasard.TirageAleatoire(8, false);
-            // false veut dire pas de doublon : une fois qu'une boule est sortie, 
-            // elle ne peut pas sortir à nouveau ;-)
-            // La série d'entiers retournée par la LotoMachine correspond au loto
-            // affiché sur votre écran TV ce soir...
-            string grilleLoto = "* ";
-            for (int i = 1; i <= 8; i++)
-            {
-                grilleLoto = grilleLoto + tirageLoto[i] + " * ";
-            }
-            MessageBox.Show(grilleLoto, "Tirage du LOTO ce jour !");
+           
 
         }
 
         private void pb_XX_Click(object sender, EventArgs e)
         {
-            
+            PictureBox carte;
+            int i_carte;
+            if (nb_cartes == 0)
+            {
+                retourner_cartes();
+            }
+            //if (Image_1 == null)
+            //    MessageBox.Show("L'image 1 n'est pas référencée");
+            //if (Image_2 == null)
+            //    MessageBox.Show("L'image 2 n'est pas référencée");
+
+                carte = (PictureBox)sender;
+                if (carte.Tag.ToString() == "trouve")
+                {
+                return;
+                }
+                i_carte = Convert.ToInt32(carte.Tag);
+                //i_image = tapisCARTES[i_carte];
+                carte.Image = il_Sabot.Images[i_carte];
+
+                if (nb_cartes == 0)
+                {
+                    Image_1 = carte;
+                    nb_cartes++;
+                }
+                else //(nb_cartes == 1)
+                {
+                    Image_2 = carte;
+                    check();
+                    nb_cartes = 0;
+
+                
+            }
+
+
+
+
+
+        }
+        public void check() { 
+                if (Image_1.Tag.ToString() == Image_2.Tag.ToString())
+                {
+                   
+
+                    Image_1.Tag = "trouve";
+                    Image_2.Tag = "trouve";
+
+                    score += 10;
+                    this.Valeur_Score.Text = score.ToString();
+
+                    gagne += 2;
+
+                    if (gagne == nbCartesSurTapis)
+                    {
+                        MessageBox.Show("Gagné");
+                        this.Close();
+                    }
+
+
+                }
+                else
+                {
+                   
+                    score -= 2;
+                    this.Valeur_Score.Text = score.ToString();
+                }
+
+                
+                Image_1 = null;
+                Image_2 = null;
+            }
+
+        private void play_Click(object sender, EventArgs e)
+        {
+            afficher_cartes();
+            time = 10;
+            this.timer.Start();
+
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btn_retourner_Click(object sender, EventArgs e)
         {
+            retourner_cartes();
+            nb_cartes = 0;
+            timer.Stop();
+            chrono.Visible = false;
+            text_chrono.Visible = false;
+
 
         }
 
-        private void Memory_Load(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-
+            time -= 1;
+            this.chrono.Text = time.ToString();
+            if (time == 0)
+            {
+                retourner_cartes();
+                this.timer.Stop();
+                chrono.Visible = false;
+                text_chrono.Visible = false;
+            }
         }
     }
 }

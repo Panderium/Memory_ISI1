@@ -1,0 +1,1 @@
+c:\users\jérémy\documents\visual studio 2015\Projects\Memory\Memory\bin\Release\Memory.exe.config
