@@ -53,6 +53,13 @@
             this.Valeur_Score = new System.Windows.Forms.Label();
             this.chrono = new System.Windows.Forms.Label();
             this.text_chrono = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.facileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moyenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.difficileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardcoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlp_cartes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -68,11 +75,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlp_cartes
             // 
-            this.tlp_cartes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tlp_cartes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(144)))), ((int)(((byte)(156)))));
             this.tlp_cartes.ColumnCount = 7;
             this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tlp_cartes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
@@ -95,7 +103,7 @@
             this.tlp_cartes.Controls.Add(this.pictureBox8, 4, 0);
             this.tlp_cartes.Controls.Add(this.pictureBox7, 5, 0);
             this.tlp_cartes.Controls.Add(this.pictureBox6, 6, 0);
-            this.tlp_cartes.Location = new System.Drawing.Point(12, 2);
+            this.tlp_cartes.Location = new System.Drawing.Point(12, 28);
             this.tlp_cartes.Name = "tlp_cartes";
             this.tlp_cartes.RowCount = 2;
             this.tlp_cartes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -359,11 +367,69 @@
             this.text_chrono.TabIndex = 9;
             this.text_chrono.Text = "Temps restant :";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1430, 25);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.facileToolStripMenuItem,
+            this.moyenToolStripMenuItem,
+            this.difficileToolStripMenuItem,
+            this.hardcoreToolStripMenuItem,
+            this.customToolStripMenuItem});
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(68, 22);
+            this.toolStripButton1.Text = "Difficulté";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // facileToolStripMenuItem
+            // 
+            this.facileToolStripMenuItem.Name = "facileToolStripMenuItem";
+            this.facileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facileToolStripMenuItem.Text = "Facile";
+            // 
+            // moyenToolStripMenuItem
+            // 
+            this.moyenToolStripMenuItem.Name = "moyenToolStripMenuItem";
+            this.moyenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.moyenToolStripMenuItem.Text = "Moyen";
+            // 
+            // difficileToolStripMenuItem
+            // 
+            this.difficileToolStripMenuItem.Name = "difficileToolStripMenuItem";
+            this.difficileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.difficileToolStripMenuItem.Text = "Difficile";
+            // 
+            // hardcoreToolStripMenuItem
+            // 
+            this.hardcoreToolStripMenuItem.Name = "hardcoreToolStripMenuItem";
+            this.hardcoreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hardcoreToolStripMenuItem.Text = "Hardcore";
+            // 
+            // customToolStripMenuItem
+            // 
+            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customToolStripMenuItem.Text = "Custom";
+            // 
             // Memory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1430, 596);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.text_chrono);
             this.Controls.Add(this.chrono);
             this.Controls.Add(this.Valeur_Score);
@@ -389,6 +455,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,6 +487,13 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem facileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moyenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem difficileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hardcoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
     }
 }
 
