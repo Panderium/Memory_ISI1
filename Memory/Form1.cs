@@ -25,7 +25,7 @@ namespace Memory
         PictureBox Image_2;
         int time = 10;
         int gagne = 0;
-        
+        bool onGame = false;
 
 
         public Memory()
@@ -117,6 +117,7 @@ namespace Memory
             PictureBox carte;
             int i_carte = 1;
 
+         
             foreach (Control ctrl in tlp_cartes.Controls)
             {   
               
@@ -197,7 +198,7 @@ namespace Memory
 
         }
         public void check() { 
-                if (Image_1.Tag.ToString() == Image_2.Tag.ToString())
+                if (Image_1.Tag.ToString() == Image_2.Tag.ToString() && Image_1.Name != Image_2.Name)
                 {
                    
 
@@ -231,22 +232,17 @@ namespace Memory
 
         private void play_Click(object sender, EventArgs e)
         {
+            if (pictureBox1.Tag == null || onGame == true )
+            {
+                return;
+            }
             afficher_cartes();
             time = 10;
             this.timer.Start();
+            onGame = true;
 
         }
 
-        private void btn_retourner_Click(object sender, EventArgs e)
-        {
-            retourner_cartes();
-            nb_cartes = 0;
-            timer.Stop();
-            chrono.Visible = false;
-            text_chrono.Visible = false;
-
-
-        }
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -263,5 +259,3 @@ namespace Memory
     }
 }
   
-
-
