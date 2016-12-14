@@ -133,6 +133,7 @@ namespace Memory
         private void btn_Distribuer_Click(object sender, EventArgs e)
         {
             score = 0;
+            onGame = false;
             this.Valeur_Score.Text = score.ToString();
             // On récupère le nombre d'images dans le réservoir :
             nbCartesDansSabot = il_Sabot.Images.Count - 1;
@@ -185,7 +186,12 @@ namespace Memory
                 }
                 else //(nb_cartes == 1)
                 {
+              
                     Image_2 = carte;
+                    if (Image_1.Name == Image_2.Name)
+                    {
+                        return;
+                    }
                     check();
                     nb_cartes = 0;
 
@@ -197,10 +203,12 @@ namespace Memory
 
 
         }
-        public void check() { 
-                if (Image_1.Tag.ToString() == Image_2.Tag.ToString() && Image_1.Name != Image_2.Name)
+        public void check() {
+           
+
+                if (Image_1.Tag.ToString() == Image_2.Tag.ToString())
                 {
-                   
+
 
                     Image_1.Tag = "trouve";
                     Image_2.Tag = "trouve";
@@ -216,15 +224,11 @@ namespace Memory
                         this.Close();
                     }
 
-
-                }
-                else
-                {
-                   
                     score -= 2;
                     this.Valeur_Score.Text = score.ToString();
                 }
-
+            
+           
                 
                 Image_1 = null;
                 Image_2 = null;
